@@ -1,7 +1,8 @@
-# confluent-kafka-python
+# Sensor Topic Project
+## confluent-kafka-python-MongoDB-MLPipeline
 
 
-This repo help us to know how to publish and consume data to and from kafka confluent in json format.
+This repo help us to know how to publish and consume data to and from kafka confluent to MongoDB in json format.
 
 Step 1: Create a conda environment
 ```
@@ -22,3 +23,4 @@ Step4:
 pip install -r requirements.txt
 ```
 
+"# Kafka-Python-MongoDB-MLPipeline" 
