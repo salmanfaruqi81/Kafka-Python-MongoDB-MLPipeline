@@ -21,7 +21,7 @@
 import argparse
 from uuid import uuid4
 from src.kafka_config import sasl_conf, schema_config
-from six.moves import input
+#from six.moves import input
 from src.kafka_logger import logging
 from confluent_kafka import Producer
 from confluent_kafka.serialization import StringSerializer, SerializationContext, MessageField
@@ -34,7 +34,7 @@ from src.entity.generic import Generic, instance_to_dict
 FILE_PATH = "/home/avnish/iNeuron_Private_Intelligence_Limited/industry_ready_project/projects/data_pipeline/kafka-sensor/sample_data/sensor/aps_failure_training_set1.csv"
 
 
-def car_to_dict(car: Generic, ctx):
+def car_to_dict(consumer_data: Generic, ctx):
     """
     Returns a dict representation of a User instance for serialization.
     Args:
@@ -43,11 +43,11 @@ def car_to_dict(car: Generic, ctx):
             operation.
     Returns:
         dict: Dict populated with user attributes to be serialized.
-        :param car:
+        :param consumer_data:
     """
 
     # User._address must not be serialized; omit from dict
-    return car.record
+    return consumer_data.record
 
 
 def delivery_report(err, msg):
